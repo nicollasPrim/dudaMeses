@@ -1,0 +1,55 @@
+/* ===== INDEX PAGE ===== */
+.home-main {
+  position: relative; z-index: 1;
+  min-height: 100vh; display: flex;
+  align-items: center; justify-content: center;
+  padding: clamp(24px,5vw,40px) clamp(16px,4vw,24px);
+}
+
+.home-card {
+  position: relative;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(242,167,195,0.4);
+  border-radius: clamp(20px,4vw,32px);
+  padding: clamp(36px,7vw,56px) clamp(24px,6vw,52px);
+  max-width: 480px; width: 100%; text-align: center;
+  box-shadow: 0 20px 60px rgba(201,107,153,0.15), 0 1px 0 rgba(255,255,255,0.8) inset;
+  display: flex; flex-direction: column; align-items: center;
+  gap: clamp(14px,3vw,20px);
+  animation: fadeUp 1s ease both;
+}
+.home-card::before {
+  content: '🌸'; position: absolute; top: -18px; left: 50%;
+  transform: translateX(-50%); font-size: clamp(1.5rem,4vw,2rem);
+  filter: drop-shadow(0 4px 8px rgba(201,107,153,0.3));
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.home-deco {
+  font-size: clamp(1rem,3vw,1.4rem); color: var(--rose-deep);
+  letter-spacing: 8px; animation: fadeUp 1s 0.1s ease both;
+}
+.home-sub {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: clamp(0.95rem,2.5vw,1.1rem); color: var(--text-light);
+  animation: fadeUp 1s 0.2s ease both;
+}
+.home-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem,7vw,3.4rem);
+  font-weight: 700; color: var(--text-dark);
+  line-height: 1.1; letter-spacing: -1px;
+  animation: fadeUp 1s 0.3s ease both;
+}
+.home-title span { font-style: italic; color: var(--rose-deep); }
+.home-quote {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: clamp(0.98rem,2.5vw,1.15rem); color: var(--text-mid);
+  line-height: 1.6; animation: fadeUp 1s 0.4s ease both;
+}
+.btn-enter { animation: fadeUp 1s 0.5s ease both; }

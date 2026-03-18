@@ -1,0 +1,119 @@
+/* ===== GALERIA PAGE ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-grid {
+  width: 100%; max-width: 660px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: clamp(120px,22vw,180px);
+  gap: clamp(6px,2vw,12px);
+  animation: fadeUp 0.8s ease both;
+}
+
+.gallery-item {
+  position: relative; border-radius: clamp(10px,2vw,16px);
+  overflow: hidden; cursor: pointer;
+  background: linear-gradient(135deg, var(--petal), var(--rose-light));
+  border: 1.5px solid var(--petal); box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-item:hover { transform: scale(1.03) translateY(-3px); box-shadow: var(--shadow); z-index: 2; }
+.gallery-item.tall  { grid-row: span 2; }
+.gallery-item.wide  { grid-column: span 2; }
+
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; transition: transform 0.4s ease;
+}
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(201,107,153,0.6), transparent 60%);
+  display: flex; align-items: flex-end; justify-content: flex-end;
+  padding: clamp(6px,2vw,12px); opacity: 0; transition: opacity 0.3s ease;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay span {
+  font-size: clamp(1rem,3vw,1.4rem); color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5); text-align: right; line-height: 1.3;
+}
+
+.gallery-item.placeholder { display: flex; align-items: center; justify-content: center; }
+.gallery-item.placeholder::before { content: '📷'; font-size: 2rem; opacity: 0.4; }
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(30,8,20,0.93); z-index: 1000;
+  display: none; align-items: center; justify-content: center;
+  padding: clamp(16px,4vw,32px);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.lightbox.active { display: flex; animation: lbFade 0.3s ease both; }
+@keyframes lbFade { from { opacity: 0; } to { opacity: 1; } }
+
+.lightbox-inner {
+  display: flex; flex-direction: column; align-items: center;
+  gap: clamp(10px,2vw,16px);
+  max-width: min(90vw, 560px); width: 100%;
+  animation: lbRise 0.35s ease both;
+}
+@keyframes lbRise {
+  from { transform: scale(0.92) translateY(16px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+#lightbox-img {
+  max-width: 100%; max-height: clamp(40vh,55vh,62vh); width: auto;
+  object-fit: contain; border-radius: clamp(12px,3vw,18px);
+  border: 2px solid rgba(242,167,195,0.25);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.55); display: block;
+}
+
+.lightbox-player {
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(242,167,195,0.2);
+  border-radius: clamp(12px,3vw,16px);
+  padding: clamp(10px,2vw,14px) clamp(12px,3vw,16px);
+  display: flex; flex-direction: column; gap: 8px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.player-note {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: clamp(0.8rem,2vw,0.92rem); color: rgba(242,167,195,0.9);
+  display: flex; align-items: center; gap: 6px;
+}
+.lightbox-player iframe {
+  display: block !important; width: 100% !important; max-width: 100% !important;
+  min-width: 0 !important; height: 80px !important;
+  border-radius: 10px !important; box-shadow: none !important; border: none !important;
+}
+
+.lightbox-close {
+  position: fixed; top: clamp(12px,3vw,18px); right: clamp(14px,3vw,22px);
+  z-index: 1001; background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18); color: white;
+  width: 38px; height: 38px; border-radius: 50%; font-size: 0.95rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.24); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: clamp(110px,28vw,155px);
+  }
+  .gallery-item.tall { grid-row: span 1; }
+  .gallery-item.wide { grid-column: span 2; }
+}
+@media (max-width: 360px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item.wide { grid-column: span 1; }
+}

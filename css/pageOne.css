@@ -1,0 +1,35 @@
+/* ===== PAGE ONE ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-title   { animation: fadeUp 0.8s ease both; }
+.photo-frame  { animation: fadeUp 0.8s 0.1s ease both; }
+.spotify-iframe { animation: fadeUp 0.8s 0.2s ease both; }
+.counter-section { animation: fadeUp 0.8s 0.3s ease both; width: 100%; }
+
+/* Counter units responsive */
+#contador {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: center;
+  gap: clamp(4px,1.5vw,8px);
+}
+.cnt-unit {
+  display: inline-flex; flex-direction: column; align-items: center;
+  background: rgba(242,167,195,0.15); border-radius: 10px;
+  padding: clamp(5px,1.5vw,8px) clamp(8px,2vw,14px);
+  min-width: clamp(44px,10vw,60px);
+}
+.cnt-unit strong {
+  font-size: clamp(1.1rem,4vw,1.5rem);
+  color: var(--rose-deep); line-height: 1.2;
+}
+.cnt-sep {
+  color: var(--rose); font-size: clamp(0.9rem,2.5vw,1.2rem);
+  align-self: center;
+}
+
+@media (max-width: 380px) {
+  .cnt-unit { padding: 4px 7px; min-width: 38px; }
+  .cnt-unit strong { font-size: 1rem; }
+}

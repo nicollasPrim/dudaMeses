@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/carta.css">
+  <title>Carta para Você</title>
+</head>
+<body>
+  <div class="petals-container" id="petals"></div>
+
+  <main>
+
+    <!-- ENVELOPE -->
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope-scene">
+        <div class="envelope" id="envelope" onclick="abrirCarta()">
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <div class="envelope-lines">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="envelope-seal">💌</div>
+          </div>
+          <div class="envelope-shadow"></div>
+        </div>
+        <p class="envelope-hint">toque para abrir</p>
+      </div>
+    </div>
+
+    <!-- CARTA -->
+    <div class="carta-wrapper hidden" id="cartaWrapper">
+      <div class="carta-paper">
+
+        <div class="carta-header">
+          <span class="carta-deco">✦ &nbsp; ✦ &nbsp; ✦</span>
+          <p class="carta-date">20 de Janeiro de 2026</p>
+        </div>
+
+        <p class="carta-saudacao">Minha vida,</p>
+
+        <div class="carta-body">
+          <p>Nada jamais vai explicar o que foram esses (mais de) 2 meses ao seu lado, você me fez ser eu de novo, você faz algo que só você consegue e eu não sei nem dizer o que é, não só comigo, mas com tudo em minha volta, como se tudo ressonasse um pouco mais bonito, ter planos, enxergar um motivo, querer algo…</p>
+
+          <p>E esse algo é você! Isso é a forma mais resumida que eu consigo dizer o que quero, porque eu sei que se não tiver você não vai valer a pena.</p>
+
+          <p>Eu posso ser bem ignorante dizendo isso, mas às vezes acho que quando você diz que É o Yonlu você tá certa, mesmo que ele devesse demorar mais pra voltar, quem garante que alguém como você não devesse vir ao mundo de novo? Eu acho que sim, se você não existisse o que seria de mim? O que seria da rabugentice do Fred? Quem conseguiria ocupar o seu lugar?</p>
+
+          <p>Ninguém, ninguém conseguiria, porque ninguém jamais vai ser alguém como você, alguém com tanto carinho e amor guardado dentro de si, e que eu sou tão grato por poder vivenciá-los.</p>
+
+          <p>Enquanto escrevo isso só penso nas memórias que ainda vamos criar, como daqui algumas horas, de como sempre vamos lembrar como o nosso primeiro show do Deftones, o nosso primeiro Lollapalooza, <em>juntos</em>, e nas infinitas memórias que já temos, tanto tempo que passou tão rápido.</p>
+        </div>
+
+        <p class="carta-fechamento">Pra mais linda e perfeita garota que o mundo já conheceu.</p>
+
+        <div class="carta-footer">
+          <span class="carta-deco small">✦ &nbsp; ✦ &nbsp; ✦</span>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- NAV: index(0) · pageOne(1) · galeria(2) · carta(3✦) · setlist(4) -->
+  <nav class="page-nav">
+    <a href="setlist.html" class="nav-btn nav-prev">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Setlist</span>
+    </a>
+    <div class="nav-dots">
+      <a href="index.html"   class="dot"></a>
+      <a href="pageOne.html" class="dot"></a>
+      <a href="galeria.html" class="dot"></a>
+      <a href="setlist.html" class="dot"></a>
+      <span                  class="dot active"></span>
+    </div>
+    <a href="index.html" class="nav-btn nav-next">
+      <span>Inicio</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </nav>
+
+  <script src="../js/carta.js"></script>
+</body>
+</html>

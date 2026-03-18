@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/galeria.css">
+  <title>Nossa Galeria</title>
+</head>
+<body>
+  <div class="petals-container" id="petals"></div>
+
+  <main>
+    <h1 class="page-title">Nossa galeria</h1>
+    <p class="page-sub">Coisinhas e memórias que moram, e vão morar pra sempre, no meu coração.</p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item tall"
+        data-spotify="https://open.spotify.com/embed/track/3Gu2G1W0WZhFMmg2bD2eKR?utm_source=generator"
+        data-song="O Rabugento — Cartolas">
+        <img src="../img/WhatsApp Image 2026-03-18 at 00.57.35.jpeg" alt="Memória 1" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-overlay"><span>🐱</span></div>
+      </div>
+
+      <div class="gallery-item"
+        data-spotify="https://open.spotify.com/embed/track/3B4q6KbHbGV51HO3GznBFF?utm_source=generator"
+        data-song="What I Got — Sublime">
+        <img src="../img/WhatsApp Image 2026-03-18 at 00.57.54.jpeg" alt="Memória 2" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-overlay"><span>🐶</span></div>
+      </div>
+
+      <div class="gallery-item"
+        data-spotify="https://open.spotify.com/embed/track/2HvuyQEnKR82zwfIuCBaWH?utm_source=generator"
+        data-song="Caso Sério — Rita Lee">
+        <img src="../img/WhatsApp Image 2026-03-18 at 00.59.48 (1).jpeg" alt="Memória 3" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-overlay"><span>💍</span></div>
+      </div>
+
+      <div class="gallery-item wide"
+        data-spotify="https://open.spotify.com/embed/track/7DGQ4elHQhgNLdOPtIM4jB?utm_source=generator"
+        data-song="Mecânica Celeste Aplicada — Yonlu">
+        <img src="../img/WhatsApp Image 2026-03-18 at 00.59.48.jpeg" alt="Memória 4" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-overlay"><span>💗</span></div>
+      </div>
+
+      <div class="gallery-item"
+        data-spotify="https://open.spotify.com/embed/track/0psB5QzGb4653K0uaPgEyh?utm_source=generator"
+        data-song="Suck My Kiss — RHCP">
+        <img src="../img/WhatsApp Image 2026-03-18 at 02.06.01 (1).jpeg" alt="Memória 5" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-overlay"><span style="font-size:15px">TWO HELLO KITTYS TOGETHER OH MY GOD!!!!!!</span></div>
+      </div>
+
+      <div class="gallery-item"
+        data-spotify="https://open.spotify.com/embed/track/3mwvKOyMmG77zZRunnxp9E?utm_source=generator"
+        data-song="Buddy Holly — Weezer">
+        <img src="../img/WhatsApp Image 2026-03-18 at 00.59.49.jpeg" alt="Memória 6" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-overlay"><span style="font-size:15px">My Little Angel</span></div>
+      </div>
+
+      <div class="gallery-item tall"
+        data-spotify="https://open.spotify.com/embed/track/7CjSiLsV6c0N2hEBK0MtaB?utm_source=generator"
+        data-song="Não Tenho Imaginação Pra Mudar de Mulher — Marconi Notaro">
+        <img src="../img/WhatsApp Image 2026-03-18 at 02.06.01.jpeg" alt="Memória 7" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-overlay"><span>💐</span></div>
+      </div>
+
+      <div class="gallery-item wide"
+        data-spotify="https://open.spotify.com/embed/track/1oTKnx7AgEhA5wUs3Z8rrr?utm_source=generator"
+        data-song="Needles And Pins — Deftones">
+        <img src="../img/WhatsApp Image 2026-03-18 at 02.06.00.jpeg" alt="Memória 8" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-overlay"><span>♾️</span></div>
+      </div>
+
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">✕</button>
+      <div class="lightbox-inner" id="lightboxInner">
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-player" id="lightboxPlayer">
+          <div class="player-note">🎵 <span id="playerSongName"></span></div>
+          <iframe id="spotifyEmbed" src="" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- NAV: index(0) · pageOne(1) · galeria(2✦) · carta(3) · setlist(4) -->
+  <nav class="page-nav">
+    <a href="pageOne.html" class="nav-btn nav-prev">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Voltar</span>
+    </a>
+    <div class="nav-dots">
+      <a href="index.html"   class="dot"></a>
+      <a href="pageOne.html" class="dot"></a>
+      <span                  class="dot active"></span>
+      <a href="setlist.html" class="dot"></a>
+      <a href="carta.html"   class="dot"></a>
+    </div>
+    <a href="carta.html" class="nav-btn nav-next">
+      <span>Carta</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </nav>
+
+  <script src="js/galeria.js"></script>
+</body>
+</html>
